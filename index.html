@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bathroom Renovation — Before &amp; After</title>
+  <meta name="description" content="A before-and-after look at our bathroom renovation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <p class="eyebrow">Home Project</p>
+      <h1>The Bathroom Renovation</h1>
+      <p class="lede">
+        Same footprint, a completely different room. Drag the handle to peel
+        back the old and reveal the new.
+      </p>
+    </header>
+
+    <section
+      class="compare"
+      aria-label="Before and after comparison of the bathroom"
+    >
+      <figure
+        class="ba"
+        id="ba"
+        style="--pos: 50%"
+      >
+        <img
+          class="ba__img ba__img--after"
+          src="images/after.jpg"
+          alt="The bathroom after renovation"
+          draggable="false"
+          decoding="async"
+        />
+        <img
+          class="ba__img ba__img--before"
+          src="images/before.jpg"
+          alt="The bathroom before renovation"
+          draggable="false"
+          decoding="async"
+        />
+
+        <span class="ba__label ba__label--before" aria-hidden="true">Before</span>
+        <span class="ba__label ba__label--after" aria-hidden="true">After</span>
+
+        <button
+          type="button"
+          class="ba__handle"
+          id="baHandle"
+          role="slider"
+          aria-label="Reveal before or after"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="50"
+          aria-valuetext="Halfway between before and after"
+        >
+          <span class="ba__grip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="10 7 5 12 10 17" />
+              <polyline points="14 7 19 12 14 17" />
+            </svg>
+          </span>
+        </button>
+      </figure>
+
+      <p class="compare__hint" id="hint">Drag, or focus the handle and use ← →</p>
+    </section>
+
+    <footer class="footer">
+      <p>Built with a little HTML, CSS, and a Saturday of tiling.</p>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
