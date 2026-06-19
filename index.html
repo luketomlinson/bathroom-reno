@@ -19,8 +19,8 @@
       <p class="eyebrow">Home Project</p>
       <h1>The Bathroom Renovation</h1>
       <p class="lede">
-        Same footprint, a completely different room. Drag the handle to peel
-        back the old and reveal the new.
+        Same footprint, a completely different room. Pick a view below, then
+        drag the handle to peel back the old and reveal the new.
       </p>
     </header>
 
@@ -35,15 +35,17 @@
       >
         <img
           class="ba__img ba__img--after"
-          src="images/after.jpg"
-          alt="The bathroom after renovation"
+          id="imgAfter"
+          src="images/vanity-after.jpg"
+          alt="Vanity and mirror after renovation"
           draggable="false"
           decoding="async"
         />
         <img
           class="ba__img ba__img--before"
-          src="images/before.jpg"
-          alt="The bathroom before renovation"
+          id="imgBefore"
+          src="images/vanity-before.jpg"
+          alt="Vanity and mirror before renovation"
           draggable="false"
           decoding="async"
         />
@@ -71,7 +73,44 @@
         </button>
       </figure>
 
-      <p class="compare__hint" id="hint">Drag, or focus the handle and use ← →</p>
+      <div class="compare__bar">
+        <p class="compare__caption" id="caption">Vanity &amp; mirror</p>
+        <p class="compare__hint" id="hint">Drag, or focus the handle and use ← →</p>
+      </div>
+
+      <div class="scenes" role="group" aria-label="Choose a view to compare">
+        <button
+          type="button"
+          class="scene is-active"
+          aria-current="true"
+          data-before="images/vanity-before.jpg"
+          data-after="images/vanity-after.jpg"
+          data-title="Vanity &amp; mirror"
+        >
+          <img src="images/vanity-after.jpg" alt="" loading="lazy" />
+          <span class="scene__name">Vanity</span>
+        </button>
+        <button
+          type="button"
+          class="scene"
+          data-before="images/shower-before.jpg"
+          data-after="images/shower-after.jpg"
+          data-title="Walk-in shower"
+        >
+          <img src="images/shower-after.jpg" alt="" loading="lazy" />
+          <span class="scene__name">Shower</span>
+        </button>
+        <button
+          type="button"
+          class="scene"
+          data-before="images/tub-before.jpg"
+          data-after="images/tub-after.jpg"
+          data-title="Tub &amp; window"
+        >
+          <img src="images/tub-after.jpg" alt="" loading="lazy" />
+          <span class="scene__name">Tub</span>
+        </button>
+      </div>
     </section>
 
     <footer class="footer">

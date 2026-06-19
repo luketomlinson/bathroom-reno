@@ -106,5 +106,42 @@
     setPosition(pos);
   });
 
+  // ---- Scene picker: swap the compared pair without touching the slider ----
+  var imgBefore = document.getElementById("imgBefore");
+  var imgAfter = document.getElementById("imgAfter");
+  var caption = document.getElementById("caption");
+  var scenes = Array.prototype.slice.call(document.querySelectorAll(".scene"));
+
+  scenes.forEach(function (btn) {
+    [btn.dataset.before, btn.dataset.after].forEach(function (src) {
+      var img = new Image();
+      img.src = src;
+    });
+  });
+
+  function selectScene(btn) {
+    if (!btn || !imgBefore || !imgAfter) return;
+    var title = btn.dataset.title || "";
+
+    imgBefore.src = btn.dataset.before;
+    imgAfter.src = btn.dataset.after;
+    imgBefore.alt = title + " before renovation";
+    imgAfter.alt = title + " after renovation";
+    if (caption) caption.textContent = title;
+
+    scenes.forEach(function (other) {
+      var active = other === btn;
+      other.classList.toggle("is-active", active);
+      if (active) other.setAttribute("aria-current", "true");
+      else other.removeAttribute("aria-current");
+    });
+  }
+
+  scenes.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      selectScene(btn);
+    });
+  });
+
   setPosition(pos);
 })();

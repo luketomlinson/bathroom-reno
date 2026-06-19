@@ -1,17 +1,42 @@
 # Bathroom Renovation — Before &amp; After
 
-A tiny static site with a draggable before/after image slider. No build step, no
-dependencies — just HTML, CSS, and a little vanilla JavaScript.
+A tiny static site with a draggable before/after image slider and a small gallery
+of views (vanity, shower, tub). No build step, no dependencies — just HTML, CSS,
+and a little vanilla JavaScript.
 
 ## Use your own photos
 
-Replace the two files in `images/` with your photos, keeping the same names:
+Each view is one before/after pair in `images/`. Replace these files with your
+photos, keeping the same names:
 
-- `images/before.jpg`
-- `images/after.jpg`
+| View   | Before                      | After                      |
+| ------ | --------------------------- | -------------------------- |
+| Vanity | `images/vanity-before.jpg`  | `images/vanity-after.jpg`  |
+| Shower | `images/shower-before.jpg`  | `images/shower-after.jpg`  |
+| Tub    | `images/tub-before.jpg`     | `images/tub-after.jpg`     |
 
-For the cleanest result, export both at the **same dimensions** (the placeholders
-are 1200×800). The slider crops to fit, so close-but-not-identical sizes are fine.
+For each pair, shoot the **before and after from the same spot** and export both
+at the **same dimensions** (the placeholders are 1200×800) so the slider reveals a
+clean transformation.
+
+### Add or remove a view
+
+The gallery is driven entirely by markup — no JavaScript changes needed. In
+`index.html`, copy a `.scene` button inside `<div class="scenes">` and point its
+attributes at your images:
+
+```html
+<button type="button" class="scene"
+        data-before="images/floor-before.jpg"
+        data-after="images/floor-after.jpg"
+        data-title="Heated floor">
+  <img src="images/floor-after.jpg" alt="" loading="lazy" />
+  <span class="scene__name">Floor</span>
+</button>
+```
+
+To remove a view, delete its button. To change which view loads first, move a
+button to the top and give it `class="scene is-active"` and `aria-current="true"`.
 
 ## Preview locally
 
@@ -33,11 +58,12 @@ Or just double-click `index.html`.
 ## Files
 
 ```
-index.html    markup
+index.html    markup + the scene list
 styles.css    styling (light + dark, responsive)
-script.js     slider behavior (drag + keyboard)
-images/       before.jpg, after.jpg
+script.js     slider behavior (drag + keyboard) and scene switching
+images/       <view>-before.jpg / <view>-after.jpg pairs
 ```
 
 The handle is keyboard accessible: focus it and use ← → (hold Shift for bigger
-steps, Home/End to jump to either edge).
+steps, Home/End to jump to either edge). The view thumbnails are buttons — Tab to
+one and press Enter to compare it.
