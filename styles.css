@@ -296,6 +296,47 @@ body {
   font-weight: 600;
 }
 
+/* ---- Progress gallery ---- */
+.progress {
+  margin-top: clamp(3rem, 8vw, 5rem);
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.section-head h2 {
+  margin: 0.3rem 0 0.5rem;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Masonry-style columns keep every photo at its natural shape — no cropping. */
+.progress__grid {
+  column-width: 220px;
+  column-gap: 0.9rem;
+}
+
+.shot {
+  margin: 0 0 0.9rem;
+  break-inside: avoid;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ---- Footer ---- */
 .footer {
   margin-top: clamp(2.5rem, 6vw, 4rem);

@@ -145,3 +145,46 @@
 
   setPosition(pos);
 })();
+
+// ---- Progress gallery: auto-fill from images/progress-1.jpg, -2, ... ----
+(function () {
+  var section = document.getElementById("progress");
+  var grid = document.getElementById("progressGrid");
+  if (!section || !grid) return;
+
+  var MAX_PHOTOS = 12; // raise this if you add more than 12 progress photos
+  var slots = [];
+  var settled = 0;
+
+  function finish() {
+    if (++settled < MAX_PHOTOS) return;
+    var any = false;
+    slots.forEach(function (fig) {
+      if (!fig) return;
+      grid.appendChild(fig);
+      any = true;
+    });
+    if (any) section.hidden = false;
+  }
+
+  for (var i = 1; i <= MAX_PHOTOS; i++) {
+    (function (n) {
+      var src = "images/progress-" + n + ".jpg";
+      var probe = new Image();
+      probe.onload = function () {
+        var fig = document.createElement("figure");
+        fig.className = "shot";
+        var img = document.createElement("img");
+        img.src = src;
+        img.alt = "Renovation in progress " + n;
+        img.loading = "lazy";
+        img.decoding = "async";
+        fig.appendChild(img);
+        slots[n - 1] = fig;
+        finish();
+      };
+      probe.onerror = finish;
+      probe.src = src;
+    })(i);
+  }
+})();
