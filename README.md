@@ -41,8 +41,9 @@ button to the top and give it `class="scene is-active"` and `aria-current="true"
 ## Progress photos
 
 The **process** section fills itself from numbered photos — no markup to edit.
-Drop files into `images/` named `progress-1.jpg`, `progress-2.jpg`, and so on
-(lowercase `.jpg`). They show up in number order, gaps are fine, and the whole
+Drop files into `images/` named `progress-1`, `progress-2`, and so on, with a
+`.jpg` or `.JPG` extension (either case works — phone exports are often
+uppercase). They show up in number order, gaps are fine, and the whole
 section stays hidden until at least one photo exists.
 
 Adding more than 12? Bump `MAX_PHOTOS` near the bottom of `script.js`.
