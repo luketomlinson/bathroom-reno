@@ -31,16 +31,16 @@
         <img
           class="ba__img ba__img--after"
           id="imgAfter"
-          src="images/vanity-after.jpg"
-          alt="Vanity and mirror after renovation"
+          src="images/full-after.jpg"
+          alt="The full room after renovation"
           draggable="false"
           decoding="async"
         />
         <img
           class="ba__img ba__img--before"
           id="imgBefore"
-          src="images/vanity-before.jpg"
-          alt="Vanity and mirror before renovation"
+          src="images/full-before.jpg"
+          alt="The full room before renovation"
           draggable="false"
           decoding="async"
         />
@@ -69,7 +69,7 @@
       </figure>
 
       <div class="compare__bar">
-        <p class="compare__caption" id="caption">Vanity &amp; mirror</p>
+        <p class="compare__caption" id="caption">The full room</p>
         <p class="compare__hint" id="hint">Drag, or focus the handle and use ← →</p>
       </div>
 
@@ -78,6 +78,16 @@
           type="button"
           class="scene is-active"
           aria-current="true"
+          data-before="images/full-before.jpg"
+          data-after="images/full-after.jpg"
+          data-title="The full room"
+        >
+          <img src="images/full-after.jpg" alt="" loading="lazy" />
+          <span class="scene__name">Full room</span>
+        </button>
+        <button
+          type="button"
+          class="scene"
           data-before="images/vanity-before.jpg"
           data-after="images/vanity-after.jpg"
           data-title="Vanity &amp; mirror"
@@ -94,16 +104,6 @@
         >
           <img src="images/shower-after.jpg" alt="" loading="lazy" />
           <span class="scene__name">Shower</span>
-        </button>
-        <button
-          type="button"
-          class="scene"
-          data-before="images/full-before.jpg"
-          data-after="images/full-after.jpg"
-          data-title="The full room"
-        >
-          <img src="images/full-after.jpg" alt="" loading="lazy" />
-          <span class="scene__name">Full room</span>
         </button>
       </div>
     </section>
