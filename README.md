@@ -1,8 +1,8 @@
 # Bathroom Renovation — Before &amp; After
 
 A tiny static site with a draggable before/after image slider and a small gallery
-of views (vanity, shower, tub). No build step, no dependencies — just HTML, CSS,
-and a little vanilla JavaScript.
+of views (vanity, shower, full room). No build step, no dependencies — just HTML,
+CSS, and a little vanilla JavaScript.
 
 ## Use your own photos
 
@@ -13,11 +13,11 @@ photos, keeping the same names:
 | ------ | --------------------------- | -------------------------- |
 | Vanity | `images/vanity-before.jpg`  | `images/vanity-after.jpg`  |
 | Shower | `images/shower-before.jpg`  | `images/shower-after.jpg`  |
-| Tub    | `images/tub-before.jpg`     | `images/tub-after.jpg`     |
+| Full   | `images/full-before.jpg`    | `images/full-after.jpg`    |
 
 For each pair, shoot the **before and after from the same spot** and export both
-at the **same dimensions** (the placeholders are 1200×800) so the slider reveals a
-clean transformation.
+at the **same dimensions** (the photos are 1200×1600, portrait) so the slider
+reveals a clean transformation.
 
 ### Add or remove a view
 
